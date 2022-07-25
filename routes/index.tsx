@@ -10,10 +10,8 @@ export default function Home() {
         Welcome to the Dungeons and Dragons 5th Edition Character Generator.
       </h2>
       <div>
-        <p>Start by selecting your race</p>
         <Races></Races>
       </div>
-
     </div>
   );
 }
