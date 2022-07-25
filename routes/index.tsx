@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "@twind";
-// import Counter from "../islands/Counter.tsx";
+import Counter from "../islands/Counter.tsx";
 import Races from "../islands/Races.tsx";
 import Stats from "../islands/Stats.tsx";
 export default function Home() {

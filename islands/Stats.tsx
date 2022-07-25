@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "@twind";
+import { useState } from "preact/hooks";
 
 interface Stats {
     Strength: number;
@@ -20,7 +21,8 @@ var PC = {
     Charisma: 10
 }
 
-export default function Stats(Stats: object) {
+export default function Stats(props: Stats) {
+  const [Stats, setStats] = useState(10);
   if (!Stats) {
     return <h1>Stats could not be loaded!</h1>;
   }
@@ -46,6 +48,58 @@ export default function Stats(Stats: object) {
         <td>{PC.Intelligence}</td>
         <td>{PC.Wisdom}</td>
         <td>{PC.Charisma}</td>
+    </tr>
+    <tr>
+        <td>
+            <button onClick={() => setStats(PC.Strength+=1)}> +1
+            </button>
+        </td>
+        <td>
+            <button onClick={() => setStats(PC.Dexterity+=1)}> +1
+            </button>
+        </td>
+        <td>
+            <button onClick={() => setStats(PC.Constituiton+=1)}> +1
+            </button>
+        </td>
+        <td>
+            <button onClick={() => setStats(PC.Intelligence+=1)}> +1
+            </button>
+        </td>
+        <td>
+            <button onClick={() => setStats(PC.Wisdom+=1)}> +1
+            </button>
+        </td>
+        <td>
+            <button onClick={() => setStats(PC.Charisma+=1)}> +1
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onClick={() => setStats(PC.Strength-=1)}> -1
+            </button>
+        </td>
+        <td>
+            <button onClick={() => setStats(PC.Dexterity-=1)}> -1
+            </button>
+        </td>
+        <td>
+            <button onClick={() => setStats(PC.Constituiton-=1)}> -1
+            </button>
+        </td>
+        <td>
+            <button onClick={() => setStats(PC.Intelligence-=1)}> -1
+            </button>
+        </td>
+        <td>
+            <button onClick={() => setStats(PC.Wisdom-=1)}> -1
+            </button>
+        </td>
+        <td>
+            <button onClick={() => setStats(PC.Charisma-=1)}> -1
+            </button>
+        </td>
     </tr>
   </tbody>
 </table>
